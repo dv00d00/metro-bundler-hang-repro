@@ -1,3 +1,173 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* First Bites Design System - Muted colors with subtle violet accents */
+
+@layer base {
+    :root {
+      /* Muted Brand Colors - Pastel Violet */
+      --primary-violet: 270 30% 70%;        /* Soft violet for subtle accents */
+      --primary-violet-light: 270 20% 80%;  /* Very light violet */
+      --primary-violet-dark: 270 40% 60%;   /* Slightly darker violet */
+      
+      --sage-green: 85 15% 45%;           /* Muted sage green */
+      --sage-green-light: 85 10% 55%;     /* Light muted sage */
+      --sage-green-dark: 85 20% 35%;      /* Dark muted sage */
+      
+      --neutral-50: 210 20% 98%;          /* Very light neutral */
+      --neutral-100: 210 20% 95%;         /* Light neutral */
+      --neutral-200: 210 16% 90%;         /* Lighter gray */
+      --neutral-300: 210 14% 83%;         /* Light gray */
+      --neutral-400: 210 14% 71%;         /* Medium gray */
+      --neutral-500: 210 11% 60%;         /* Balanced gray */
+      --neutral-600: 210 13% 46%;         /* Dark gray */
+      --neutral-700: 210 18% 35%;         /* Darker gray */
+      --neutral-800: 210 20% 25%;         /* Very dark gray */
+      --neutral-900: 210 24% 16%;         /* Darkest gray */
+      
+      --trust-blue: 200 50% 65%;          /* Muted blue for trust elements */
+      --warning-orange: 35 70% 70%;       /* Softer orange for warnings */
+      --success-green: 120 40% 55%;       /* Muted green for success */
+      
+      /* Shadcn UI Compatible Colors */
+      --background: var(--neutral-50);
+      --foreground: var(--neutral-800);
+  
+      --card: 0 0% 100%;
+      --card-foreground: var(--foreground);
+  
+      --popover: 0 0% 100%;
+      --popover-foreground: var(--foreground);
+  
+      --primary: var(--primary-violet);
+      --primary-foreground: 0 0% 100%;
+  
+      --secondary: var(--neutral-100);
+      --secondary-foreground: var(--neutral-700);
+  
+      --muted: var(--neutral-100);
+      --muted-foreground: var(--neutral-500);
+  
+      --accent: var(--neutral-100);
+      --accent-foreground: var(--neutral-700);
+  
+      --destructive: var(--warning-orange);
+      --destructive-foreground: 0 0% 100%;
+  
+      --border: var(--neutral-200);
+      --input: var(--neutral-100);
+      --ring: var(--primary-violet);
+  
+      --radius: 0.75rem;
+  
+      --sidebar-background: var(--neutral-50);
+      --sidebar-foreground: var(--foreground);
+      --sidebar-primary: var(--primary-violet);
+      --sidebar-primary-foreground: 0 0% 100%;
+      --sidebar-accent: var(--neutral-100);
+      --sidebar-accent-foreground: var(--neutral-700);
+      --sidebar-border: var(--neutral-200);
+      --sidebar-ring: var(--primary-violet);
+    }
+  
+    .dark {
+      /* Dark mode with muted slate colors */
+      --background: var(--neutral-900);
+      --foreground: var(--neutral-100);
+  
+      --card: var(--neutral-800);
+      --card-foreground: var(--foreground);
+  
+      --popover: var(--neutral-800);
+      --popover-foreground: var(--foreground);
+  
+      --primary: var(--primary-violet-light);
+      --primary-foreground: var(--neutral-900);
+  
+      --secondary: var(--neutral-700);
+      --secondary-foreground: var(--neutral-200);
+  
+      --muted: var(--neutral-800);
+      --muted-foreground: var(--neutral-400);
+  
+      --accent: var(--neutral-700);
+      --accent-foreground: var(--neutral-200);
+  
+      --destructive: var(--warning-orange);
+      --destructive-foreground: 0 0% 100%;
+  
+      --border: var(--neutral-700);
+      --input: var(--neutral-800);
+      --ring: var(--primary-violet-light);
+  
+      --sidebar-background: var(--neutral-900);
+      --sidebar-foreground: var(--foreground);
+      --sidebar-primary: var(--primary-violet-light);
+      --sidebar-primary-foreground: var(--neutral-900);
+      --sidebar-accent: var(--neutral-700);
+      --sidebar-accent-foreground: var(--neutral-200);
+      --sidebar-border: var(--neutral-700);
+      --sidebar-ring: var(--primary-violet-light);
+    }
+  }
+  
+  @layer base {
+    * {
+      @apply border-border;
+    }
+  
+    body {
+      @apply bg-background text-foreground font-body;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+  
+    /* Typography scale for baby app */
+    .text-display {
+      @apply text-4xl font-display font-bold leading-tight;
+    }
+    
+    .text-heading-1 {
+      @apply text-3xl font-display font-bold leading-tight;
+    }
+    
+    .text-heading-2 {
+      @apply text-2xl font-display font-semibold leading-snug;
+    }
+    
+    .text-heading-3 {
+      @apply text-xl font-display font-semibold leading-snug;
+    }
+    
+    .text-body-large {
+      @apply text-lg font-body font-normal leading-relaxed;
+    }
+    
+    .text-body {
+      @apply text-base font-body font-normal leading-relaxed;
+    }
+    
+    .text-body-small {
+      @apply text-sm font-body font-normal leading-relaxed;
+    }
+    
+    .text-caption {
+      @apply text-xs font-body font-medium leading-normal;
+    }
+  }
+  
+  /* Subtle gradient backgrounds for First Bites */
+  @layer utilities {
+    .bg-gradient-subtle {
+      background: linear-gradient(135deg, hsl(var(--neutral-50)), hsl(var(--neutral-100)));
+    }
+    
+    .bg-gradient-violet-subtle {
+      background: linear-gradient(135deg, hsl(var(--primary-violet-light)), hsl(var(--primary-violet)));
+    }
+    
+    .bg-gradient-sage-subtle {
+      background: linear-gradient(135deg, hsl(var(--sage-green-light)), hsl(var(--sage-green)));
+    }
+  }
